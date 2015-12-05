@@ -67,7 +67,8 @@
     //Just in case you need to check if something equals 5...
     var isNumber5 = function(num)
     {
-      return num == 5;
+      if (num == 5) return true
+      return false
     }
 
     var addRealFunctionalityOnTheFly = function () {
@@ -118,14 +119,12 @@
         }
     }();
 
-    //Return true if today is Christmas
-    var isChristmas = function()
-    {
-        var today = new(Date);
-        // Months are 0 indexed
-        return (today.getMonth() == 11 && today.getDate() == 25);
+	// when you need something but you don't know what
+    var something = function(){
+    	var keys = Object.keys(anything.prototype); 
+    	var r = this.getRandomNumber(keys.length); 
+    	return anything.prototype[keys[r]].bind(this);
     }
-
 
     //prototypes go here
     anything.prototype.doTheThing = doTheThing;
@@ -144,8 +143,9 @@
     anything.prototype.twoString = twoString;
     anything.prototype.fizzbuzz = fizzbuzz;
     anything.prototype.generateUniqueColorHue = generateUniqueColorHue;
-    anything.prototype.isChristmas = isChristmas;
+    anything.prototype.something = something;
 
+	
     //put that shit where everyone can see it.
     if(typeof(window.Δ) === 'undefined'){
         window.Δ = new anything();
